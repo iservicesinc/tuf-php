@@ -26,7 +26,7 @@ TUF-php is a lightweight framework for building PHP powered applications. It inc
     **then**
 
     ```shell
-    npm init
+    npm run init
     ```
 
     **Start up local development environment in docker.**
