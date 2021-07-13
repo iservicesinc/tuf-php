@@ -1,0 +1,43 @@
+<!--
+ ___    ____                  _               
+|_ _|  / ___|  ___ _ ____   _(_) ___ ___  ___ 
+ | |   \___ \ / _ \ '__\ \ / / |/ __/ _ \/ __|
+ | |    ___) |  __/ |   \ V /| | (_|  __/\__ \
+|___|  |____/ \___|_|    \_/ |_|\___\___||___/
+            ...when IT matters!				
+                                                
+https://iservicesinc.com https://iservicesinc.net
+Copyright 2021 I Services, Inc. All rights reserved.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{$title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+    <style>
+        body {
+            background: #fafef9ff;
+        }
+        .uk-card-teardrop {
+            border-radius: 50px 0 50px 50px;
+        }
+    </style>
+    {block extra_styles}{/block}
+</head>
+<body id="main" class="no-js">
+    <main class="uk-container-expand uk-padding-remove uk-margin-remove">
+    {block content}{/block}
+    </main>
+    {block extra_scripts}{/block}
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

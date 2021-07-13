@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: iservicesinc
+      POSTGRES_PASSWORD: iservicesinc
+      POSTGRES_DB: iservicesinc
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - iservicesinc
+
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - iservicesinc
+
+volumes:
+  pg_data:
+
+networks:
+  iservicesinc:

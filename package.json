@@ -1,0 +1,22 @@
+{
+  "name": "tuf-php",
+  "version": "0.0.1",
+  "description": "The Un-opinionated Framework",
+  "scripts": {
+    "init": "./tuf",
+    "server": "docker-compose up --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgrobstein/homepage.git"
+  },
+  "keywords": [
+    "homepage"
+  ],
+  "author": "@jgrobstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgrobstein/homepage/issues"
+  },
+  "homepage": "https://github.com/jgrobstein/homepage#readme"
+}

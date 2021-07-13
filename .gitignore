@@ -1,0 +1,5 @@
+.env.ini
+.cache/
+db/
+vendor/
+phinx.php

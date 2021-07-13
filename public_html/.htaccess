@@ -1,0 +1,11 @@
+RewriteEngine on
+
+# Follow symbolic links.
+Options +FollowSymLinks
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php [L,QSA]
+
+# Custom error pages.
+ErrorDocument 404 /404
