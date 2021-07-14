@@ -46,13 +46,9 @@
         <li><a class="uk-button-link" href="#overview" uk-scroll="offset:100;">Overview</a></li>
         <li><a class="uk-button-link" href="#docker" uk-scroll="offset:100;">.docker/</a></li>
         <li><a class="uk-button-link" href="#app" uk-scroll="offset:100;">app/</a></li>
-        <li><a class="uk-button-link" href="#db" uk-scroll="offset:100;">db/</a></li>
         <li><a class="uk-button-link" href="#public-html" uk-scroll="offset:100;">public_html/</a></li>
-        <li><a class="uk-button-link" href="#vendor" uk-scroll="offset:100;">vendor/</a></li>
         <li><a class="uk-button-link" href="#env-ini" uk-scroll="offset:100;">.env.ini</a></li>
         <li><a class="uk-button-link" href="#gitignore" uk-scroll="offset:100;">.gitignore</a></li>
-        <li><a class="uk-button-link" href="#composer-json" uk-scroll="offset:100;">composer.json</a></li>
-        <li><a class="uk-button-link" href="#composer-lock" uk-scroll="offset:100;">composer.lock</a></li>
         <li><a class="uk-button-link" href="#config" uk-scroll="offset:100;">config.php</a></li>
         <li><a class="uk-button-link" href="#docker-compose" uk-scroll="offset:100;">docker-compose.yml</a></li>
         <li><a class="uk-button-link" href="#dockerfile" uk-scroll="offset:100;">Dockerfile</a></li>
@@ -63,11 +59,15 @@
 <div class="is-main uk-section uk-section-default uk-padding">
     <div class="uk-container uk-container-small">
         <h1 class="uk-heading">TUF-php</h1>
-        <p class="uk-text-lead"><b>T</b>he <b>U</b>n-opinionated <b>F</b>ramework</p>
-        <p class="uk-text-warning">Project description needed...</p>
+        <p class="uk-text-lead uk-text-danger"><b>T</b>he <b>U</b>n-opinionated <b>F</b>ramework</p>
+        <p class="uk-text-primary">A lightweight PHP framework with Latte templating engine and Phinx for database migrations. No batteries or kitchen sink included!</p>
+        <p class="uk-text-primary">TUF-php is an un-opinionated framework for any PHP project, build your own or add functionality with composer packages. 
+        We include <code>`latte/latte`</code> templating engine, and <code>`robmorgan/phinx`</code> for database migrations and wrap the project into a dual container docker 
+        development environment that runs the database server and PHP web server for your application.</p>
         <h2 class="uk-heading">Getting Started</h2>
         <h3 id="introduction">Introduction</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">TUF-php offers a simple solution to building custom PHP applications. We took the two most common libraries we use with every application, 
+        bundled it together with a simple routing solution, and packaged it with sum custom scripts to initialize and serve your project in local docker containers.</p>
         <h3 id="requirements">Requirements</h3>
         <p class="uk-text-primary">The following pre-requisites must be installed:</p>
         <ul class="uk-list">
@@ -77,36 +77,61 @@
             <li>Node <span class="uk-text-muted">(npm required to run scripts)</span></li>
         </ul>
         <h3 id="installation">Installation</h3>
-        <code class="uk-text-primary uk-display-block">git clone git@github.com:iservicesinc/tuf-php.git</code>
+        <p>Create your new project:</p>
+        <code class="uk-text-primary uk-display-block">git clone git@github.com:iservicesinc/tuf-php.git &lt;my-project&gt;</code>
+        <p>Change directories to your new project:</p>
+        <code class="uk-text-primary uk-display-block">cd &lt;my-project&gt;</code>
+        <p>Initialize your new project:</p>
         <code class="uk-text-primary uk-display-block">npm run init</code>
-        <code class="uk-text-primary uk-display-block">npm run server</code>
-        </code>
+        <p>The last command above will setup the required directories, <code>composer.json</code> file and <code>.env.ini</code> file for your project.</p>
         <h3 id="quick-start">Quick Start</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <code class="uk-text-primary uk-display-block">git clone git@github.com:iservicesinc/tuf-php.git &lt;my-project&gt;</code>
+        <code class="uk-text-primary uk-display-block">cd &lt;my-project&gt;</code>
+        <code class="uk-text-primary uk-display-block">npm run init</code>
+        <code class="uk-text-primary uk-display-block">npm run server &</code>
+        <code class="uk-text-primary uk-display-block">code .</code>
         <h2 class="uk-heading">Configuration</h2>
         <h3 id="environment">Environment</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">The <code>.env.ini</code> file of your project stores some useful information that can assist you in programming certain features. 
+        You can use this file to set any environment variables needed for your application. By default we only make use of the <code>maintenance_mode</code> variable.</p>
+        <p class="uk-text-primary">Our environment variables for the project are parsed and stored in the global <code>$_SERVER</code> array.</p>
         <h3 id="database">Database</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">TUF-php includes a database container and the <code>`robmorgan/phinx`</code> package to manage migrations. 
+        We include a PostgreSQL database container in our <code>docker-compose.yml</code> configuration, this can be easily substituted for other data stores as required.</p>
+        <p class="uk-text-primary">We also include the database environment variables in our <code>.env.ini</code> file however, please note that we do not make any assumptions on 
+        how you connect to the database, no methods or functions are included for managing your database within your application. You are free to add or build your own.</p>
+        <p class="uk-text-muted">To get started using the <code>`robmorgan/phinx`</code> package for your database migrations, 
+        please refer to the <a href="https://book.cakephp.org/phinx/0/en/index.html" rel="noopener nofollow noreferrer" target="_blank">Phinx Docs</a>.</p>
+        <p class="uk-text-muted">If you are looking for an ORM solution to work with the database we recommend using <code>`nette/database`</code>.</p>
         <h3 id="routes">Routes</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">TUF-php includes a simple router function that integrates the <code>`latte/latte`</code> templating engine. 
+        Application routes are declared in the <code>app/routes.php</code> file. This file and the router function can both be easily modified and extended as required.</p>
+        <p>Setting up routes in TUF-php is simple! The application checks the 'REQUEST_URI' in the headers, returns the 'path' component of the 'REQUEST_URI',
+        then invokes our <code>Router</code> class, and uses a <code>switch</code> to call our <code>route()</code> function.
         <h3 id="views">Views</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">Views are created using the <code>`latte/latte`</code> templating language. 
+        If prefered, you can also create views in <code>php</code> or <code>html</code> files. Our router will find the file associated to a view regardless of it's extension.</p>
+        <p class="uk-text-primary">You can also substitute <code>`latte/latte`</code> for another templating engine easily enough by editing the <code>Router</code> class in <code>Router.class.php</code>.</p>
+        <p class="uk-text-muted">To learn more about <code>`latte/latte`</code> please visit the <a href="https://latte.nette.org/en/guide" rel="noopener nofollow noreferrer" target="_blank">Latte Docs</a>.</p>
         <h2 class="uk-heading">Structure</h2>
         <h3 id="overview">Overview</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">TUF-php is structured to be simple and versatile. Due to how un-opinionated this project is you are free to modify and extend the default structure. 
+        Below we will describe each base directory and file in the root of your project.</p>
         <h3 id="docker">.docker/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">This directory contains resources for our docker containers. 
+        By default it includes a <code>vhost.conf</code> file that gets copied to our PHP container to enable the virtual host on the Apache web server. 
+        You can add any additional resource files here for your docker containers as your application requires.</p>
         <h3 id="app">app/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
-        <h3 id="db">db/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">This directory stores our application logic. In it you will find a <code>lib/</code> sub-directoy where we store our classes and functions that get included throughout our application, 
+        and the <code>routes.php</code> file which is used to setup routing to your applications views.</p>
         <h3 id="public_html">public_html/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
-        <h3 id="vendor">vendor/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">This directory houses our applications main <code>index.php</code> page as well as any publicly accessible web assets such as css files, js files, favicons, site manifest, etc.</p>
+        <p class="uk-text-muted">Included in this directory there is a <code>.htaccess</code> file which is responsible for rewriting our URLS for our applications router. 
+        This requires <code>mod_rewrite</code> (already enabled in the docker container) to be enabled on your server to function correctly.</p>
         <h3 id="views">views/</h3>
-        <p class="uk-text-warning">Project documentation needed...</p>
+        <p class="uk-text-primary">Here is where you create your views, our router searches this directory and requires the files matching the name provided in our <code>route()</code> function. 
+        We have setup the home page and this documentation page in this directory as an example of how views work using the default <code>`latte/latte`</code> telpating engine.</p>
+        <p class="uk-text-muted">As an exercise, try opening the <code>views/home.page.latte</code> file and make some edits to it, then save it and reload the application in your browser to see your edits!</p>
         <h3 id="env-ini">.env.ini</h3>
         <p class="uk-text-primary">Ini format file to set environment variables for our project.</p>
         <h3 id="gitignore">.gitignore</h3>
@@ -118,7 +143,7 @@
         <h3 id="dockerfile">Dockerfile</h3>
         <p class="uk-text-primary">Instructional file for the PHP docker container.</p>
         <h3 id="package">package.json</h3>
-        <p class="uk-text-primary">An `npm` package description file with custom scripts to initialize nd serve the project in the included docker containers.</p>
+        <p class="uk-text-primary">An `npm` package description file with custom scripts to initialize and serve the project in the included docker containers.</p>
         <h3 id="tuf">tuf</h3>
         <p class="uk-text-primary">Simple bash script used by `package.json` to initialize application.</p>
     </div>
