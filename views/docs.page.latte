@@ -41,12 +41,13 @@
         <li><a class="uk-button-link" href="#environment" uk-scroll="offset:100;">Environment</a></li>
         <li><a class="uk-button-link" href="#database" uk-scroll="offset:100;">Database</a></li>
         <li><a class="uk-button-link" href="#routes" uk-scroll="offset:100;">Routes</a></li>
-        <li><a class="uk-button-link" href="#views" uk-scroll="offset:100;">Views</a></li>
+        <li><a class="uk-button-link" href="#Views" uk-scroll="offset:100;">Views</a></li>
         <li class="uk-nav-header">Structure</a></li>
         <li><a class="uk-button-link" href="#overview" uk-scroll="offset:100;">Overview</a></li>
         <li><a class="uk-button-link" href="#docker" uk-scroll="offset:100;">.docker/</a></li>
         <li><a class="uk-button-link" href="#app" uk-scroll="offset:100;">app/</a></li>
         <li><a class="uk-button-link" href="#public-html" uk-scroll="offset:100;">public_html/</a></li>
+        <li><a class="uk-button-link" href="#views" uk-scroll="offset:100;">views/</a></li>
         <li><a class="uk-button-link" href="#env-ini" uk-scroll="offset:100;">.env.ini</a></li>
         <li><a class="uk-button-link" href="#gitignore" uk-scroll="offset:100;">.gitignore</a></li>
         <li><a class="uk-button-link" href="#config" uk-scroll="offset:100;">config.php</a></li>
@@ -67,7 +68,7 @@
         <h2 class="uk-heading">Getting Started</h2>
         <h3 id="introduction">Introduction</h3>
         <p class="uk-text-primary">TUF-php offers a simple solution to building custom PHP applications. We took the two most common libraries we use with every application, 
-        bundled it together with a simple routing solution, and packaged it with sum custom scripts to initialize and serve your project in local docker containers.</p>
+        bundled it together with a simple routing solution, and packaged it with a couple custom scripts to initialize and serve your project in local docker containers.</p>
         <h3 id="requirements">Requirements</h3>
         <p class="uk-text-primary">The following pre-requisites must be installed:</p>
         <ul class="uk-list">
@@ -108,7 +109,7 @@
         Application routes are declared in the <code>app/routes.php</code> file. This file and the router function can both be easily modified and extended as required.</p>
         <p>Setting up routes in TUF-php is simple! The application checks the 'REQUEST_URI' in the headers, returns the 'path' component of the 'REQUEST_URI',
         then invokes our <code>Router</code> class, and uses a <code>switch</code> to call our <code>route()</code> function.
-        <h3 id="views">Views</h3>
+        <h3 id="Views">Views</h3>
         <p class="uk-text-primary">Views are created using the <code>`latte/latte`</code> templating language. 
         If prefered, you can also create views in <code>php</code> or <code>html</code> files. Our router will find the file associated to a view regardless of it's extension.</p>
         <p class="uk-text-primary">You can also substitute <code>`latte/latte`</code> for another templating engine easily enough by editing the <code>Router</code> class in <code>Router.class.php</code>.</p>
@@ -124,7 +125,7 @@
         <h3 id="app">app/</h3>
         <p class="uk-text-primary">This directory stores our application logic. In it you will find a <code>lib/</code> sub-directoy where we store our classes and functions that get included throughout our application, 
         and the <code>routes.php</code> file which is used to setup routing to your applications views.</p>
-        <h3 id="public_html">public_html/</h3>
+        <h3 id="public-html">public_html/</h3>
         <p class="uk-text-primary">This directory houses our applications main <code>index.php</code> page as well as any publicly accessible web assets such as css files, js files, favicons, site manifest, etc.</p>
         <p class="uk-text-muted">Included in this directory there is a <code>.htaccess</code> file which is responsible for rewriting our URLS for our applications router. 
         This requires <code>mod_rewrite</code> (already enabled in the docker container) to be enabled on your server to function correctly.</p>
