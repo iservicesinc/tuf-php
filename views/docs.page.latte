@@ -1,0 +1,129 @@
+{layout './layouts/main.layout.latte'}
+
+{block extra_styles}
+<style>
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #fff;
+}
+.is-sidebar-left {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 240px !important;
+    padding: 40px 40px 60px 40px;
+    border-right: 1px #e5e5e5 solid;
+    overflow: auto;
+}
+@media (min-width: 960px) {
+    .is-sidebar-left+.is-main {
+        padding-left: 240px;
+    }
+}
+</style>
+{/block}
+{block content}
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container uk-box-shadow-small " uk-navbar>
+        <div class="uk-navbar-center">
+            <a  class="uk-navbar-item uk-logo" href="/"><img data-src="/apple-touch-icon.png" width="60" height="60" alt="Logo" uk-img></a>
+        </div>
+    </nav>
+</div>
+<div class="is-sidebar-left uk-visible@m uk-section uk-section-primary">
+    <ul class="uk-nav">
+        <li class="uk-nav-header">Getting Started</a></li>
+        <li><a class="uk-button-link" href="#introduction" uk-scroll="offset:100;">Introduction</a></li>
+        <li><a class="uk-button-link" href="#requirements" uk-scroll="offset:100;">Requirements</a></li>
+        <li><a class="uk-button-link" href="#installation" uk-scroll="offset:100;">Installation</a></li>
+        <li><a class="uk-button-link" href="#quick-start" uk-scroll="offset:100;">Quick Start</a></li>
+        <li class="uk-nav-header">Configuration</a></li>
+        <li><a class="uk-button-link" href="#environment" uk-scroll="offset:100;">Environment</a></li>
+        <li><a class="uk-button-link" href="#database" uk-scroll="offset:100;">Database</a></li>
+        <li><a class="uk-button-link" href="#routes" uk-scroll="offset:100;">Routes</a></li>
+        <li><a class="uk-button-link" href="#views" uk-scroll="offset:100;">Views</a></li>
+        <li class="uk-nav-header">Structure</a></li>
+        <li><a class="uk-button-link" href="#overview" uk-scroll="offset:100;">Overview</a></li>
+        <li><a class="uk-button-link" href="#docker" uk-scroll="offset:100;">.docker/</a></li>
+        <li><a class="uk-button-link" href="#app" uk-scroll="offset:100;">app/</a></li>
+        <li><a class="uk-button-link" href="#db" uk-scroll="offset:100;">db/</a></li>
+        <li><a class="uk-button-link" href="#public-html" uk-scroll="offset:100;">public_html/</a></li>
+        <li><a class="uk-button-link" href="#vendor" uk-scroll="offset:100;">vendor/</a></li>
+        <li><a class="uk-button-link" href="#env-ini" uk-scroll="offset:100;">.env.ini</a></li>
+        <li><a class="uk-button-link" href="#gitignore" uk-scroll="offset:100;">.gitignore</a></li>
+        <li><a class="uk-button-link" href="#composer-json" uk-scroll="offset:100;">composer.json</a></li>
+        <li><a class="uk-button-link" href="#composer-lock" uk-scroll="offset:100;">composer.lock</a></li>
+        <li><a class="uk-button-link" href="#config" uk-scroll="offset:100;">config.php</a></li>
+        <li><a class="uk-button-link" href="#docker-compose" uk-scroll="offset:100;">docker-compose.yml</a></li>
+        <li><a class="uk-button-link" href="#dockerfile" uk-scroll="offset:100;">Dockerfile</a></li>
+        <li><a class="uk-button-link" href="#package" uk-scroll="offset:100;">package.json</a></li>
+        <li><a class="uk-button-link" href="#tuf" uk-scroll="offset:100;">tuf</a></li>
+    </ul>
+</div>
+<div class="is-main uk-section uk-section-default uk-padding">
+    <div class="uk-container uk-container-small">
+        <h1 class="uk-heading">TUF-php</h1>
+        <p class="uk-text-lead"><b>T</b>he <b>U</b>n-opinionated <b>F</b>ramework</p>
+        <p class="uk-text-warning">Project description needed...</p>
+        <h2 class="uk-heading">Getting Started</h2>
+        <h3 id="introduction">Introduction</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="requirements">Requirements</h3>
+        <p class="uk-text-primary">The following pre-requisites must be installed:</p>
+        <ul class="uk-list">
+            <li>Docker <span class="uk-text-muted">(required for our development environment)</span></li>
+            <li>Docker-Compose <span class="uk-text-muted">(required to orchestrate our docker containers)</span></li>
+            <li>Composer <span class="uk-text-muted">(our php package manager)</span></li>
+            <li>Node <span class="uk-text-muted">(npm required to run scripts)</span></li>
+        </ul>
+        <h3 id="installation">Installation</h3>
+        <code class="uk-text-primary uk-display-block">git clone git@github.com:iservicesinc/tuf-php.git</code>
+        <code class="uk-text-primary uk-display-block">npm run init</code>
+        <code class="uk-text-primary uk-display-block">npm run server</code>
+        </code>
+        <h3 id="quick-start">Quick Start</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h2 class="uk-heading">Configuration</h2>
+        <h3 id="environment">Environment</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="database">Database</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="routes">Routes</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="views">Views</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h2 class="uk-heading">Structure</h2>
+        <h3 id="overview">Overview</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="docker">.docker/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="app">app/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="db">db/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="public_html">public_html/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="vendor">vendor/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="views">views/</h3>
+        <p class="uk-text-warning">Project documentation needed...</p>
+        <h3 id="env-ini">.env.ini</h3>
+        <p class="uk-text-primary">Ini format file to set environment variables for our project.</p>
+        <h3 id="gitignore">.gitignore</h3>
+        <p class="uk-text-primary">Makes sure we don't commit unnecessary files to our repo.</p>
+        <h3 id="config">config.php</h3>
+        <p class="uk-text-primary">Projects configuration file.</p>
+        <h3 id="docker-compose">docker-compose.yml</h3>
+        <p class="uk-text-primary">Instructional docker file for orchestrating containers.</p>
+        <h3 id="dockerfile">Dockerfile</h3>
+        <p class="uk-text-primary">Instructional file for the PHP docker container.</p>
+        <h3 id="package">package.json</h3>
+        <p class="uk-text-primary">An `npm` package description file with custom scripts to initialize nd serve the project in the included docker containers.</p>
+        <h3 id="tuf">tuf</h3>
+        <p class="uk-text-primary">Simple bash script used by `package.json` to initialize application.</p>
+    </div>
+    <div class="uk-container uk-margin">
+        <p class="uk-text-small uk-text-muted uk-text-right">&copy; 2021 I Services, Inc.</p>
+    </div>
+</div>
+{/block}

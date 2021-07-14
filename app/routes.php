@@ -13,6 +13,10 @@ switch ($path) {
         $router->route('home.page', array("title" => "Welcome"));
         break;
     
+    case '/docs':
+        $router->route('docs.page', array("title" => "Documentation"));
+        break;
+
     // Maintenance page
     case '/maintenance':
         if ($_SERVER['maintenance_mode'] === true) {
