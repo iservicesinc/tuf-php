@@ -1,6 +1,13 @@
+##### Environment
 .env.ini
-.cache/
-db/
-vendor/
+
+##### Latte
+/.cache/
+
+##### Composer
+/vendor/
 composer*
+
+##### Phinx
+/db/
 phinx.php

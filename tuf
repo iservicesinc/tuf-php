@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 if [ ! -f composer.json ]; then
     composer init --require-dev robmorgan/phinx:0.12.7 --require-dev latte/latte:2.10.3 --autoload 'app/lib/';
     vendor/bin/phinx init;
