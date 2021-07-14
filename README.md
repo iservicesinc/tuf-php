@@ -16,26 +16,39 @@
 TUF-php is a lightweight framework for building PHP powered applications. It includes `Latte` for a templating engine, and `Phinx` for database migrations, everything else is up to you!
 
 ### 🚀 Quick start
-1.  **Start developing.**
+1.  **Download TUF-php.**
 
     ```shell
     git clone git@github.com:iservicesinc/tuf-php.git
     cd tuf-php
     ```
 
-    **then**
+1.  **Initialize the project**
 
     ```shell
     npm run init
     ```
 
-    **Start up local development environment in docker.**
+1.  **Start the docker development environment.**
 
     ```shell
-    npm run server
+    npm run server &
     ```
+    > The trailing `&` is used to start the process in the background so you can return back to the command prompt.
+
+    Your site is now running at `http://localhost:8000`!  
+    Documentation is available at `http://localhost:8000/docs`
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    ```shell
+    code .
+    ```
+    > `code` is the command to start **VS Code** from the terminal. You should have **VS Code** already installed for this to work. Otherwise, substitute it with your preffered code editor.
     
+
+    Have fun, and build something **TUF**!
+
+### Issues
+
+Please report any issues at the projects [Issues](https://github.com/iservicesinc/tuf-php/issues) page.
