@@ -31,7 +31,7 @@ class Router {
             exit(0);
         } else {
             return http_response_code(404);
-            exit(0);
+            exit(1);
         }
     }
 

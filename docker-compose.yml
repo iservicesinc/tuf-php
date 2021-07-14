@@ -4,15 +4,15 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: iservicesinc
-      POSTGRES_PASSWORD: iservicesinc
-      POSTGRES_DB: iservicesinc
+      POSTGRES_USER: tufphp
+      POSTGRES_PASSWORD: tufphp
+      POSTGRES_DB: tufphp
     ports:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     networks:
-      - iservicesinc
+      - tufphp
 
   php:
     build:
@@ -25,10 +25,10 @@ services:
     depends_on:
       - db
     networks:
-      - iservicesinc
+      - tufphp
 
 volumes:
   pg_data:
 
 networks:
-  iservicesinc:
+  tufphp:

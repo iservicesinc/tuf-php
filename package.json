@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgrobstein/homepage.git"
+    "url": "git+https://github.com/jgrobstein/tuf-php.git"
   },
   "keywords": [
-    "homepage"
+    "tuf-php"
   ],
   "author": "@jgrobstein",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jgrobstein/homepage/issues"
+    "url": "https://github.com/jgrobstein/tuf-php/issues"
   },
-  "homepage": "https://github.com/jgrobstein/homepage#readme"
+  "homepage": "https://github.com/jgrobstein/tuf-php#readme"
 }
