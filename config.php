@@ -13,7 +13,7 @@
 if (file_exists(BASE_DIR.'/vendor/autoload.php')) {
     require_once(BASE_DIR.'/vendor/autoload.php');
 }
-require_once BASE_DIR.'/app/lib/random_str.php';
+use \Iservicesinc\TufPhp\Utils;
 
 if (!file_exists(BASE_DIR . '/.env.ini')) { 
     copy(BASE_DIR . '/.env.example.ini', BASE_DIR . '/.env.ini') or die('Failed to auto-generate .env.ini file, please copy the .env.example.ini file to .env.ini manually.');
@@ -21,7 +21,7 @@ if (!file_exists(BASE_DIR . '/.env.ini')) {
 
 $ini = parse_ini_file(BASE_DIR . '/.env.ini', true);
 if (!isset($_SERVER['environment'])) $_SERVER['environment'] = !isset($ini['env']['environment']) ? 'development' : $ini['env']['environment'];
-if (!isset($_SERVER['salt'])) $_SERVER['salt'] = !isset($ini['env']['salt']) ? random_str(64, true) : $ini['env']['salt'];
+if (!isset($_SERVER['salt'])) $_SERVER['salt'] = !isset($ini['env']['salt']) ? Utils::random_str(64, true) : $ini['env']['salt'];
 if (!isset($_SERVER['maintenance_mode'])) $_SERVER['maintenance_mode'] = ($ini['env']['maintenance_mode'] == 'true') ? true : false;
 
 require_once BASE_DIR.'/app/routes.php';

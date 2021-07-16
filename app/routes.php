@@ -1,10 +1,14 @@
 <?php
-require BASE_DIR . '/app/lib/Router.class.php';
+use \Iservicesinc\TufPhp\Router;
 
 $url = parse_url($_SERVER['REQUEST_URI']);
 $path = $url['path'];
 $router = new Router();
 $router->maintenance();
+if (!isset($_SESSION['salt'])) {
+    $_SESSION['salt'] = hash('sha256', $_SERVER['REMOTE_ADDR'] . time() . $_SERVER['salt'], 0);
+    setcookie('salt', $_SESSION['salt'], time() + 60*60, '/', $_SERVER['SERVER_NAME'], 0, 1);
+}
 
 switch ($path) {
 

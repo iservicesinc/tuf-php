@@ -10,11 +10,13 @@
  * https://iservicesinc.com https://iservicesinc.net
  * Copyright 2021 I Services, Inc. All rights reserved.
 */
+namespace Iservicesinc\TufPhp;
+
 class Router {
 
     function maintenance() {
         if ($_SERVER['maintenance_mode'] == true) {
-            $latte = new Latte\Engine;
+            $latte = new \Latte\Engine;
             $latte->setTempDirectory(BASE_DIR . '/.cache');
             $latte->render(BASE_DIR . '/views/maintenance.latte', $args = array());
             exit(0);
@@ -22,7 +24,7 @@ class Router {
     }
 
     function route(string $page, array $args = array()) {
-        $latte = new Latte\Engine;
+        $latte = new \Latte\Engine;
         $latte->setTempDirectory(BASE_DIR . '/.cache');
         $file = glob(BASE_DIR . "/views/$page*");
     

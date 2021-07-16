@@ -4,7 +4,7 @@ if [ ! -f composer.json ]; then
     vendor/bin/phinx init;
     cp .env.example.ini .env.ini;
     INSECURE='INSECURE_VXiXWG1NRbQD6YwLeKQfUqZq4ApA20PgFVcrsljhpOEc8PbTKeUjQFW';
-    SALT=`php -r 'require "app/lib/random_str.php"; echo random_str(64);'`;
+    SALT=`tr -dc 0-9A-Za-z </dev/urandom | head -c 64`;
     sed -i "s/$INSECURE/$SALT/" .env.ini;
 fi
 if [ ! -d .cache ]; then

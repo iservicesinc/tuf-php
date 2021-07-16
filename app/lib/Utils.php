@@ -10,9 +10,14 @@
  * https://iservicesinc.com https://iservicesinc.net
  * Copyright 2021 I Services, Inc. All rights reserved.
 */
-function random_str(int $length = 32, bool $isc = false) {
-    $x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if ($isc === true) {$x .= '~!@#$%^&*_+-=\|<>?,./';}
-    return substr(str_shuffle(str_repeat($x, ceil($length/strlen($x)))), 1, $length);
+namespace Iservicesinc\TufPhp;
+
+class Utils {
+
+    public static function random_str(int $length = 32, bool $isc = false) {
+        $x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        if ($isc === true) {$x .= '~!@#$%^&*_+-=\|<>?,./';}
+        return substr(str_shuffle(str_repeat($x, ceil($length/strlen($x)))), 1, $length);
+    }
 }
 ?>
