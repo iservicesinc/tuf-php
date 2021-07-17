@@ -1,5 +1,14 @@
 {layout './layouts/main.layout.latte'}
 
+{block extra_styles}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+* {
+    font-family: 'Comfortaa', cursive !important;
+}
+</style>
+{/block}
+
 {block content}
 <div class="uk-flex uk-flex-center uk-flex-middle uk-flex-column uk-height-viewport">
     <ul class="uk-navbar-nav">

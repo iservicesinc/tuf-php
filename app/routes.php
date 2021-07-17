@@ -1,15 +1,15 @@
 <?php
-use \Iservicesinc\TufPhp\Router;
-
-$url = parse_url($_SERVER['REQUEST_URI']);
-$path = $url['path'];
-$router = new Router();
-$router->maintenance();
-if (!isset($_SESSION['salt'])) {
-    $_SESSION['salt'] = hash('sha256', $_SERVER['REMOTE_ADDR'] . time() . $_SERVER['salt'], 0);
-    setcookie('salt', $_SESSION['salt'], time() + 60*60, '/', $_SERVER['SERVER_NAME'], 0, 1);
-}
-
+/*
+ *  ___    ____                  _               
+ * |_ _|  / ___|  ___ _ ____   _(_) ___ ___  ___ 
+ *  | |   \___ \ / _ \ '__\ \ / / |/ __/ _ \/ __|
+ *  | |    ___) |  __/ |   \ V /| | (_|  __/\__ \
+ * |___|  |____/ \___|_|    \_/ |_|\___\___||___/
+ *             ...when IT matters!				
+ *                                                 
+ * https://iservicesinc.com https://iservicesinc.net
+ * Copyright 2021 I Services, Inc. All rights reserved.
+*/
 switch ($path) {
 
     case '/':
@@ -18,7 +18,9 @@ switch ($path) {
         break;
     
     case '/docs':
-        $router->route('docs.page', array("title" => "Documentation"));
+        $params['title'] = "Documentation";
+        $params['tuf'] = $_SESSION['TUF'];
+        $router->route('docs.page', $params);
         break;
 
     // Maintenance page

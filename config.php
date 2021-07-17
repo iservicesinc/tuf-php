@@ -20,9 +20,33 @@ if (!file_exists(BASE_DIR . '/.env.ini')) {
 }
 
 $ini = parse_ini_file(BASE_DIR . '/.env.ini', true);
-if (!isset($_SERVER['environment'])) $_SERVER['environment'] = !isset($ini['env']['environment']) ? 'development' : $ini['env']['environment'];
-if (!isset($_SERVER['salt'])) $_SERVER['salt'] = !isset($ini['env']['salt']) ? Utils::random_str(64, true) : $ini['env']['salt'];
-if (!isset($_SERVER['maintenance_mode'])) $_SERVER['maintenance_mode'] = ($ini['env']['maintenance_mode'] == 'true') ? true : false;
+$_SESSION['TUF'] = array();
+
+foreach ($ini as $k => $v) {
+    if (is_array($v)) {
+        $a = $k;
+        foreach ($v as $k => $v) {
+            $_SESSION['TUF'][$a][$k] = $v;
+        }
+    } else {
+        $_SESSION['TUF'][$k] = $v;
+    }
+}
+
+if (!isset($_SESSION['TUF']['env']['environment'])) $_SESSION['TUF']['env']['environment'] = !isset($ini['env']['environment']) ? 'development' : $ini['env']['environment'];
+if (!isset($_SESSION['TUF']['env']['salt'])) $_SESSION['TUF']['env']['salt'] = !isset($ini['env']['salt']) ? Utils::random_str(64, true) : $ini['env']['salt'];
+if (!isset($_SESSION['TUF']['env']['maintenance_mode'])) $_SESSION['TUF']['env']['maintenance_mode'] = ($ini['env']['maintenance_mode'] == 'true') ? true : false;
+
+use \Iservicesinc\TufPhp\Router;
+
+$url = parse_url($_SERVER['REQUEST_URI']);
+$path = $url['path'];
+$router = new Router();
+$router->maintenance();
+if (!isset($_SESSION['salt'])) {
+    $_SESSION['salt'] = hash('sha256', $_SERVER['REMOTE_ADDR'] . time() . $_SESSION['TUF']['env']['salt'], 0);
+    setcookie('salt', $_SESSION['salt'], time() + 60*60, '/', $_SERVER['SERVER_NAME'], 0, 1);
+}
 
 require_once BASE_DIR.'/app/routes.php';
 ?>

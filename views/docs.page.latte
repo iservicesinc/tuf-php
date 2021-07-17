@@ -2,6 +2,10 @@
 
 {block extra_styles}
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+* {
+    font-family: 'Comfortaa', cursive !important;
+}
 .uk-navbar-container:not(.uk-navbar-transparent) {
     background: #fff;
 }
@@ -94,8 +98,10 @@
         <h2 class="uk-heading">Configuration</h2>
         <h3 id="environment">Environment</h3>
         <p class="uk-text-primary">The <code>.env.ini</code> file of your project stores some useful information that can assist you in programming certain features. 
-        You can use this file to set any environment variables needed for your application. By default we only make use of the <code>maintenance_mode</code> variable.</p>
-        <p class="uk-text-primary">Our environment variables for the project are parsed and stored in the global <code>$_SERVER</code> array.</p>
+        You can use this file to set any environment variables needed for your application. By default we only make use of the <code>maintenance_mode</code>, 
+        and <code>salt</code> variables. The logic of how to use these variables is up to you</p>
+        <p class="uk-text-primary">Our environment variables for the project are parsed and stored in a <code>$_SESSION['TUF']</code> array, 
+        making them easy for you to use in your logic throughout the application.</p>
         <h3 id="database">Database</h3>
         <p class="uk-text-primary">TUF-php includes a database container and the <code>`robmorgan/phinx`</code> package to manage migrations. 
         We include a PostgreSQL database container in our <code>docker-compose.yml</code> configuration, this can be easily substituted for other data stores as required.</p>
