@@ -113,8 +113,6 @@
         <h3 id="routes">Routes</h3>
         <p class="uk-text-primary">TUF-php includes a simple router function that integrates the <code>`latte/latte`</code> templating engine. 
         Application routes are declared in the <code>app/routes.php</code> file. This file and the router function can both be easily modified and extended as required.</p>
-        <p>Setting up routes in TUF-php is simple! The application checks the 'REQUEST_URI' in the headers, returns the 'path' component of the 'REQUEST_URI',
-        then invokes our <code>Router</code> class, and uses a <code>switch</code> to call our <code>route()</code> function.
         <h3 id="Views">Views</h3>
         <p class="uk-text-primary">Views are created using the <code>`latte/latte`</code> templating language. 
         If prefered, you can also create views in <code>php</code> or <code>html</code> files. Our router will find the file associated to a view regardless of it's extension.</p>
