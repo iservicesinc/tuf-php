@@ -7,8 +7,8 @@
 
 # TUF-php
 
-![open](https://img.shields.io/badge/Open-Source-green)
-![version](https://img.shields.io/badge/Version-0.0.1-yellow)
+![open](https://img.shields.io/badge/License-ISC-blue)
+![version](https://img.shields.io/badge/Version-0.1.0-orange)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/iservicesinc/bifrost)
 
 ## **T**he **U**n-opinionated **F**ramework
