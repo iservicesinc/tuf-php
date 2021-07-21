@@ -43,7 +43,7 @@ class Router {
         self::maintenance();
         $url = parse_url($_SERVER['REQUEST_URI']);
         $path = empty($url['path']) ? '/' : $url['path'];
-        $route = self::$routes[$_SERVER['REQUEST_METHOD']][$path];
+        $route = isset(self::$routes[$_SERVER['REQUEST_METHOD']][$path]) ? self::$routes[$_SERVER['REQUEST_METHOD']][$path] : false;
         
         if ($route !== false) {
             $template_file = BASE_DIR . "/views/" . $route['template'] . ".latte";
@@ -55,7 +55,7 @@ class Router {
     }
 
     function maintenance() {
-        if ($_SERVER['maintenance_mode'] == true) {
+        if ($_SESSION['TUF']['env']['maintenance_mode'] == 'true') {
             http_response_code(503);
             $params['title'] = "Maintenance Mode";
             self::$latte->render(BASE_DIR . '/views/maintenance.latte', $params);
@@ -65,6 +65,8 @@ class Router {
     
     function not_found() {
         http_response_code(404);
+        $params['title'] = "Not found";
+        self::$latte->render(BASE_DIR . '/views/404.latte', $params);
         exit(0);
     }
 
