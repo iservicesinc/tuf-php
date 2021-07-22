@@ -7,8 +7,9 @@
 
 # TUF-php
 
-![open](https://img.shields.io/badge/License-ISC-blue)
-![version](https://img.shields.io/badge/Version-0.2.0-orange)
+[![Created_By](https://img.shields.io/badge/Created_By-I_Services-green)](https://www.iservicesinc.net)
+[![license](https://img.shields.io/badge/License-ISC-green)](LICENSE.md)
+[![version](https://img.shields.io/badge/Version-0.2.0-orange)]()
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/iservicesinc/bifrost)
 
 ## **T**he **U**n-opinionated **F**ramework
